@@ -64,8 +64,30 @@ const Header = () => {
                                     AboutMe
                                 </NavLink>
                             </Nav>
-
-
+                            {/* {user ? (
+                                <Nav>
+                                    <NavLink
+                                        onClick={logOutHandeler}
+                                        className={({ isActive }) =>
+                                            isActive ? "link-active" : "link"
+                                        }
+                                        to="/"
+                                    >
+                                        LogOut
+                                    </NavLink>
+                                </Nav>
+                            ) : (
+                                <Nav>
+                                    <NavLink
+                                        className={({ isActive }) =>
+                                            isActive ? "link-active" : "link"
+                                        }
+                                        to="/login"
+                                    >
+                                        LogIn
+                                    </NavLink>
+                                </Nav>
+                            )} */}
                             <Nav>
                                 <NavLink
                                     className={({ isActive }) =>
