@@ -13,6 +13,7 @@ import AddItems from './Pages/AddItems/AddItems';
 import SingleItems from './Pages/SingleItems/SingleItems';
 import LogIn from './Auth/LogIn/LogIn';
 import SignIn from './Auth/SignIn/SignIn';
+import Footer from './Pages/Shared/Footer/Footer';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
        <Route path='/login' element={<LogIn />}></Route>
        <Route path='/sign_in' element={<SignIn />}></Route>
      </Routes>
+     <Footer />
     </div>
   );
 }

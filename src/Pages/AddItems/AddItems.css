@@ -1,0 +1,36 @@
+textarea {
+  width: 100%;
+}
+
+.addNew{
+    background-image: url(../../Images/formbd.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.addForm {
+    background: rgba( 160, 96, 3, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur( 3px );
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.374);
+}
+
+.addForm input, .addForm textarea{
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #ddd;
+}
+.addForm input:focus, .addForm textarea:focus{
+    background-color: transparent;
+    outline: none;
+    color: #fff;
+    box-shadow: none;
+}
+.addForm input::placeholder, .addForm textarea::placeholder{
+    color: #fff;
+}
