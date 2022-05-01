@@ -8,8 +8,6 @@ const Header = () => {
             <Navbar className="header" variant="dark" expand="lg">
                 <Container>
                     <Navbar.Brand href="#home">
-
-                        {/* <img className="img-fluid " width={100} src={gymx} alt="gymx" /> */}
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
@@ -29,9 +27,9 @@ const Header = () => {
                                     className={({ isActive }) =>
                                         isActive ? "link-active" : "link"
                                     }
-                                    to="/trainer"
+                                    to="/inventory"
                                 >
-                                    Trainer
+                                    Inventory
                                 </NavLink>
                             </Nav>
                             <Nav>
@@ -39,9 +37,19 @@ const Header = () => {
                                     className={({ isActive }) =>
                                         isActive ? "link-active" : "link"
                                     }
-                                    to="/services"
+                                    to="/myItems"
                                 >
-                                    Services
+                                    MyItems
+                                </NavLink>
+                            </Nav>
+                            <Nav>
+                                <NavLink
+                                    className={({ isActive }) =>
+                                        isActive ? "link-active" : "link"
+                                    }
+                                    to="/addItems"
+                                >
+                                    AddItems
                                 </NavLink>
                             </Nav>
                             <Nav>

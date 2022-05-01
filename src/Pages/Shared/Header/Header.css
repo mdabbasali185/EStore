@@ -6,7 +6,7 @@
   padding: 0 10px;
 }
 .link:hover {
-  color: #f48460;
+  color: #E21F2F;
 }
 
 .link-active {
@@ -19,5 +19,6 @@
 }
 
 .header {
-  background: #a1b0c0;
+  background: #1F425D;
+  padding: 25px 0;
 }
