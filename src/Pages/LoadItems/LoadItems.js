@@ -5,7 +5,7 @@ const LoadItems = ({ product }) => {
     const { description, supplier, name, quantity, image, price } = product;
     return (
         <Col>
-            <Card>
+            <Card className='h-100'>
                 <Card.Img variant="top" src={image} />
                 <Card.Body>
                     <Card.Title>Name: {name}</Card.Title>
@@ -18,16 +18,6 @@ const LoadItems = ({ product }) => {
                 </Card.Body>
             </Card>
         </Col>
-        // <div>
-        //     <div className="text-center">
-        //         <img  alt="" />
-        //     </div>
-        //     <div className="text-center">
-        //         <h4></h4>
-        //         <p></p>
-        //        
-        //     </div>
-        // </div>
     );
 };
 

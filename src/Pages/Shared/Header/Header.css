@@ -1,26 +1,45 @@
 .link {
   text-decoration: none;
-  font-size: 1.5rem;
   font-weight: 700;
   color: whitesmoke;
-  padding: 10px 40px;
-  transition: all 0.3s ease-in-out;
-  clip-path: polygon(0 0%, 80% 0%, 100% 100%, 20% 100%);
-
-  margin: 0 -10px;
-}
-.link:hover {
-  background: #000;
+  padding: 10px;
+  position: relative;
+  transition: all .5s ease-in-out ;
 }
 
-.link-active.link {
-  background-color: antiquewhite;
-}
-.link-active:hover {
-  color: #e21f2f;
-}
+
 
 .header {
   background: #1f425d;
   padding: 25px 0;
+}
+
+
+@media (min-width: 992px) {
+  .link {
+    padding: 10px 40px;
+    clip-path: polygon(0 0%, 80% 0%, 100% 100%, 20% 100%);
+    position: relative;
+    transition: all .5s ease-in-out ;
+    margin: 0 -20px;
+  }
+  .link:hover {
+    color: rgb(255, 255, 255);
+  }
+
+  .link::after{
+    content: '';
+    background-color: rgba(0, 0, 0, 0.358);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transform: skew(32deg) scaleX(0);
+    transition: all .5s ease-in-out ;
+  }
+  .link:hover::after{
+    transform: skew(32deg) scaleX(1);
+  }
+  
 }

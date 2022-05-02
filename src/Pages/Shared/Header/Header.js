@@ -1,8 +1,16 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Container, Nav, Navbar } from "react-bootstrap";
 import './Header.css'
+import auth from '../../../Firebase/firebase.init';
+import { signOut } from 'firebase/auth';
 const Header = () => {
+    const [user] = useAuthState(auth)
+    const logOutHandler = event => {
+        event.preventDefault()
+        signOut(auth)
+    }
     return (
         <div>
             <Navbar className="header" variant="dark" expand="lg">
@@ -32,26 +40,7 @@ const Header = () => {
                                     Inventory
                                 </NavLink>
                             </Nav>
-                            <Nav>
-                                <NavLink
-                                    className={({ isActive }) =>
-                                        isActive ? "link-active link" : "link"
-                                    }
-                                    to="/my_items"
-                                >
-                                    MyItems
-                                </NavLink>
-                            </Nav>
-                            <Nav>
-                                <NavLink
-                                    className={({ isActive }) =>
-                                        isActive ? "link-active link" : "link"
-                                    }
-                                    to="/add_items"
-                                >
-                                    AddItems
-                                </NavLink>
-                            </Nav>
+
                             <Nav>
                                 <NavLink
                                     className={({ isActive }) =>
@@ -72,40 +61,75 @@ const Header = () => {
                                     AboutMe
                                 </NavLink>
                             </Nav>
-                            {/* {user ? (
-                                <Nav>
-                                    <NavLink
-                                        onClick={logOutHandeler}
-                                        className={({ isActive }) =>
-                                            isActive ? "link-active link" : "link"
-                                        }
-                                        to="/"
-                                    >
-                                        LogOut
-                                    </NavLink>
-                                </Nav>
+                            {user ? (
+                                <>
+
+                                    <Nav>
+                                        <NavLink
+                                            className={({ isActive }) =>
+                                                isActive ? "link-active link" : "link"
+                                            }
+                                            to="/manage-items"
+                                        >
+                                            Manage Items
+                                        </NavLink>
+                                    </Nav>
+                                    <Nav>
+                                        <NavLink
+                                            className={({ isActive }) =>
+                                                isActive ? "link-active link" : "link"
+                                            }
+                                            to="/my_items"
+                                        >
+                                            MyItems
+                                        </NavLink>
+                                    </Nav>
+                                    <Nav>
+                                        <NavLink
+                                            className={({ isActive }) =>
+                                                isActive ? "link-active link" : "link"
+                                            }
+                                            to="/add_items"
+                                        >
+                                            AddItems
+                                        </NavLink>
+                                    </Nav>
+                                    <Nav>
+                                        <NavLink
+                                            onClick={logOutHandler}
+                                            className="link"
+                                            to="/"
+                                        >
+                                            LogOut
+                                        </NavLink>
+                                    </Nav>
+                                </>
                             ) : (
-                                <Nav>
-                                    <NavLink
-                                        className={({ isActive }) =>
-                                            isActive ? "link-active link" : "link"
-                                        }
-                                        to="/login"
-                                    >
-                                        LogIn
-                                    </NavLink>
-                                </Nav>
-                            )} */}
-                            <Nav>
-                                <NavLink
-                                    className={({ isActive }) =>
-                                        isActive ? "link-active link" : "link"
-                                    }
-                                    to="/signup"
-                                >
-                                    Signup
-                                </NavLink>
-                            </Nav>
+                                <>
+                                    <Nav>
+                                        <NavLink
+                                            className={({ isActive }) =>
+                                                isActive ? "link-active link" : "link"
+                                            }
+                                            to="/login"
+                                        >
+                                            LogIn
+                                        </NavLink>
+                                    </Nav>
+
+                                    <Nav>
+                                        <NavLink
+                                            className={({ isActive }) =>
+                                                isActive ? "link-active link" : "link"
+                                            }
+                                            to="/signup"
+                                        >
+                                            Signup
+                                        </NavLink>
+                                    </Nav>
+                                </>
+
+                            )}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
