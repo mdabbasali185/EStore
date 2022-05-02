@@ -1,9 +1,14 @@
 import React from 'react';
 import tarzen from '../../Images/laptop1.jpg'
-import { Carousel } from 'react-bootstrap';
-import './Home.css'
+import { Carousel, Row } from 'react-bootstrap';
+import useCard from '../Card/Card';
+
+import './Home.css';
+import LoadItems from '../LoadItems/LoadItems';
 
 const Home = () => {
+    const [card, setCard] = useCard()
+
     return (
         <div>
             <div>
@@ -45,8 +50,19 @@ const Home = () => {
                     </Carousel.Item>
                 </Carousel>
             </div>
-            
-        </div>
+            <div className='container'>
+                <h1 className="text-center text-secondary fw-bold mt-5 animate-charcter">
+                    Total{card.length}
+                </h1>
+                <div className="card-compo">
+                    <Row  xs={1} md={2} lg={3} className="g-4 mt-3 mb-5">
+                        {card.map( item => <LoadItems key={item._id} product={item} />)}
+                    </Row>
+                </div>
+            </div>
+
+
+        </div >
     );
 };
 

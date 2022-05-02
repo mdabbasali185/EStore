@@ -73,7 +73,7 @@ const AddItems = () => {
 
                 </Row>
                 <textarea rows="5" ></textarea>
-                <button type="submit">add items</button>
+                <button className='animated-button' type="submit"> <span>add items</span> </button>
             </form>
         </div>
         </div>

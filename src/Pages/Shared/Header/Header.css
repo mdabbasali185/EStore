@@ -3,22 +3,24 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: whitesmoke;
-  padding: 0 10px;
+  padding: 10px 40px;
+  transition: all 0.3s ease-in-out;
+  clip-path: polygon(0 0%, 80% 0%, 100% 100%, 20% 100%);
+
+  margin: 0 -10px;
 }
 .link:hover {
-  color: #E21F2F;
+  background: #000;
 }
 
-.link-active {
-  color: #f48460;
-  font-weight: 700;
-  font-size: 1.5rem;
+.link-active.link {
+  background-color: antiquewhite;
 }
 .link-active:hover {
-  color: #f48460;
+  color: #e21f2f;
 }
 
 .header {
-  background: #1F425D;
+  background: #1f425d;
   padding: 25px 0;
 }

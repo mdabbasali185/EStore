@@ -1,5 +1,8 @@
 textarea {
   width: 100%;
+  resize: none;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .addNew{
@@ -10,9 +13,9 @@ textarea {
 }
 
 .addForm {
-    background: rgba( 160, 96, 3, 0.4 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 3px );
+    background: rgb(14 126 255 / 10%);
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+    backdrop-filter: blur( 6px );
     -webkit-backdrop-filter: blur( 3px );
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.374);
@@ -33,4 +36,7 @@ textarea {
 }
 .addForm input::placeholder, .addForm textarea::placeholder{
     color: #fff;
+}
+.addForm button{
+    margin: auto;
 }

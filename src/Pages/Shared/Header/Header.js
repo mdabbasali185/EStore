@@ -15,7 +15,7 @@ const Header = () => {
                             <Nav>
                                 <NavLink
                                     className={({ isActive }) =>
-                                        isActive ? "link-active" : "link"
+                                        isActive ? "link-active link" : "link"
                                     }
                                     to="/"
                                 >
@@ -25,7 +25,7 @@ const Header = () => {
                             <Nav>
                                 <NavLink
                                     className={({ isActive }) =>
-                                        isActive ? "link-active" : "link"
+                                        isActive ? "link-active link" : "link"
                                     }
                                     to="/inventory"
                                 >
@@ -35,9 +35,9 @@ const Header = () => {
                             <Nav>
                                 <NavLink
                                     className={({ isActive }) =>
-                                        isActive ? "link-active" : "link"
+                                        isActive ? "link-active link" : "link"
                                     }
-                                    to="/myItems"
+                                    to="/my_items"
                                 >
                                     MyItems
                                 </NavLink>
@@ -45,9 +45,9 @@ const Header = () => {
                             <Nav>
                                 <NavLink
                                     className={({ isActive }) =>
-                                        isActive ? "link-active" : "link"
+                                        isActive ? "link-active link" : "link"
                                     }
-                                    to="/addItems"
+                                    to="/add_items"
                                 >
                                     AddItems
                                 </NavLink>
@@ -55,7 +55,7 @@ const Header = () => {
                             <Nav>
                                 <NavLink
                                     className={({ isActive }) =>
-                                        isActive ? "link-active" : "link"
+                                        isActive ? "link-active link" : "link"
                                     }
                                     to="/blogs"
                                 >
@@ -65,7 +65,7 @@ const Header = () => {
                             <Nav>
                                 <NavLink
                                     className={({ isActive }) =>
-                                        isActive ? "link-active" : "link"
+                                        isActive ? "link-active link" : "link"
                                     }
                                     to="/aboutme"
                                 >
@@ -77,7 +77,7 @@ const Header = () => {
                                     <NavLink
                                         onClick={logOutHandeler}
                                         className={({ isActive }) =>
-                                            isActive ? "link-active" : "link"
+                                            isActive ? "link-active link" : "link"
                                         }
                                         to="/"
                                     >
@@ -88,7 +88,7 @@ const Header = () => {
                                 <Nav>
                                     <NavLink
                                         className={({ isActive }) =>
-                                            isActive ? "link-active" : "link"
+                                            isActive ? "link-active link" : "link"
                                         }
                                         to="/login"
                                     >
@@ -99,7 +99,7 @@ const Header = () => {
                             <Nav>
                                 <NavLink
                                     className={({ isActive }) =>
-                                        isActive ? "link-active" : "link"
+                                        isActive ? "link-active link" : "link"
                                     }
                                     to="/signup"
                                 >

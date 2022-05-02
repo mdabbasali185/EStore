@@ -21,22 +21,18 @@
   font-size: 20px;
   justify-content: center;
   text-align: center;
-  line-height: 1em;
   max-width: 30%;
   min-width: 140px;
   padding: 3px;
   text-decoration: none;
   user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
   cursor: pointer;
+  text-transform: capitalize;
 }
 
 .animated-button:active,
 .animated-button:hover {
   outline: 0;
-  color: #ffffff;
 }
 
 .animated-button span {

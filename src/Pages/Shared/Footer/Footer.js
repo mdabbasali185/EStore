@@ -6,14 +6,14 @@ const Footer = () => {
   return (
     <footer className="mt-auto  text-light">
       <div className="container my-5">
-        <Row>
+        <Row className='align-items-stretch'>
           <Col lg={4}>
-            <div className="px-3 border-light border-end">
+            <div className="px-3 border-light border-end h-100">
               <h1>hhjkh</h1>
             </div>
           </Col>
           <Col lg={4}>
-            <div className="px-3 border-light border-end">
+            <div className="px-3 border-light border-end h-100">
               <h1>OUR SERVICES</h1>
               <div className='text-secondary'>
                 <h5>All Services</h5>
@@ -27,7 +27,7 @@ const Footer = () => {
             </div>
           </Col>
           <Col lg={4}>
-            <div className="px-3">
+            <div className="px-3 h-100">
               <h1>hhjkh</h1>
             </div>
           </Col>
