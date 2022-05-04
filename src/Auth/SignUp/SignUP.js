@@ -45,41 +45,50 @@ const SignUp = () => {
         return <p>Loading...</p>;
     }
     return (
-        <div className="login-container my-4">
-            <div className="container">
-                <div className="login-title">SignUp</div>
-                <form className="login-form" onSubmit={handleLogin}>
-                    <input
-                        className="w-50"
-                        type="text"
-                        placeholder="Your Email"
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
+        <div className="addNew ">
+            <div className="login-container my-5">
+                <div className="container">
+                    <div className="text-center">
+                    <div className="login-title my-1 text-secondary fw-bold fs-1 bg-dark  p-2 d-inline-block ">SignUp</div>
+                    </div>
+                    <form className="login-form mx-auto w-50 addForm p-4 mt-5" onSubmit={handleLogin}>
+                        <input
+                            className="w-50"
+                            type="text"
+                            placeholder="Your Email"
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
 
-                    <div className="relative">
+                        <div className="relative">
+                            <input
+                                className="w-50 mt-3"
+                                type="password"
+                                placeholder="password"
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </div>
                         <input
                             className="w-50 mt-3"
                             type="password"
-                            placeholder="password"
-                            onChange={(e) => setPassword(e.target.value)}
+                            placeholder="confirm password"
+                            onChange={(e) => setConfirmPassword(e.target.value)}
                             required
                         />
-                    </div>
-                    <input
-                        className="w-50 mt-3"
-                        type="password"
-                        placeholder="confirm password"
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                        required
-                    />
 
-                    <button className="allButton d-block mx-auto m-2">Sign up</button>
+                        <button className='animated-button mt-3' type="submit"> <span className="py-2"> Sign Up</span> </button>
 
-                    <ToastContainer />
-                </form>
+                        <ToastContainer />
+                        <p className="fw-bold ">
+                            Already have an account?
+                            <Link className="login px-2 text-decoration-none" to="/login">
+                                Log in
+                            </Link>
+                        </p>
+                    </form>
 
-                <Link to='/login'>Already have an account.Log in here</Link>
+                </div>
             </div>
         </div>
     );

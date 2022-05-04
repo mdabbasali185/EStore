@@ -62,7 +62,7 @@ const Home = () => {
                 </Carousel>
             </div>
             <div className='container'>
-                <h1 className="text-center text-secondary fw-bold mt-5 animate-charcter">
+                <h1 className="text-center text-secondary fw-bold mt-5 ">
                     Total
                 </h1>
                 <div className="card-compo">

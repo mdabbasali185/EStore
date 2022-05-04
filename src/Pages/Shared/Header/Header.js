@@ -13,7 +13,7 @@ const Header = () => {
     }
     return (
         <div>
-            <Navbar className="header" variant="dark" expand="lg">
+            <Navbar className="header py-0" variant="dark" expand="lg">
                 <Container>
                     <Navbar.Brand href="#home">
                     </Navbar.Brand>
@@ -56,7 +56,7 @@ const Header = () => {
                                     className={({ isActive }) =>
                                         isActive ? "link-active link" : "link"
                                     }
-                                    to="/aboutme"
+                                    to="/about_me"
                                 >
                                     AboutMe
                                 </NavLink>
@@ -69,7 +69,7 @@ const Header = () => {
                                             className={({ isActive }) =>
                                                 isActive ? "link-active link" : "link"
                                             }
-                                            to="/manage-items"
+                                            to="/manage_inventory"
                                         >
                                             Manage Items
                                         </NavLink>

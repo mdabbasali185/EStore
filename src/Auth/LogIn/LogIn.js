@@ -1,15 +1,14 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
-
 import {
-  useSignInWithEmailAndPassword,
-  useSignInWithGoogle,
-  useSendPasswordResetEmail,
+  useSendPasswordResetEmail, useSignInWithEmailAndPassword,
+  useSignInWithGoogle
 } from "react-firebase-hooks/auth";
-import { toast } from "react-toastify";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../Firebase/firebase.init";
 import "./LogIn.css";
-import axios from "axios";
+
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
@@ -54,45 +53,52 @@ const LogIn = () => {
   }, [hookError]);
 
   return (
-    <div className="addNew  ">
-      <div className="login-title">LOGIN</div>
-      <form className="login-form mx-auto w-50 addForm p-4 mt-5" onSubmit={handleLogin}>
-        <input
-          className="form-control"
-          type="email"
-          placeholder="Your Email"
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+    <div className="addNew ">
+      <div className="container">
+        <div className="text-center">
+          <div className="login-title my-4 text-secondary fw-bold fs-1 bg-dark  p-2 d-inline-block mx-auto ">LOGIN</div>
+        </div>
+        <form className="login-form mx-auto w-50 addForm p-4 mt-2" onSubmit={handleLogin}>
+          <input
+            className="form-control"
+            type="email"
+            placeholder="Your Email"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-        <input
-          className="form-control mt-3"
-          type="password"
-          placeholder="password"
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+          <input
+            className="form-control mt-3"
+            type="password"
+            placeholder="password"
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
 
-        <button className="allButton d-block mx-auto m-2">Login</button>
+          <button className="animated-button d-block mx-auto m-2"> <span className="py-2">Login</span> </button>
 
-        <p>
-          Don't have an account?
-          <Link className="sign-up" to="/signup">
-            Sign up first
-          </Link>
-        </p>
-      </form>
-
-      <button className="allButton mb-5" onClick={() => signInWithGoogle()}>
-        Google
-      </button>
-      <button
-        className="allButton mb-5 btn"
-        onClick={forgetPassword}
-        disabled={!email.length}
-      >
-        Forget Password
-      </button>
+          <p className="fw-bold ">
+            Don't have an account?
+            <Link className="sign-up px-2 text-decoration-none" to="/signup">
+              Sign up first
+            </Link>
+          </p>
+        </form>
+        <div className="text-center">
+          <button className='animated-button mt-3 d-inline-block' type="submit" onClick={() => signInWithGoogle()}>
+            <span className="py-2">google </span>
+          </button>
+        </div>
+        <div className="text-center mt-3">
+          <button
+            className="animated-button  mb-5 d-inline-block btn"
+            onClick={forgetPassword}
+            disabled={!email.length}
+          >
+            <span className="py-2">Forget password </span>
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

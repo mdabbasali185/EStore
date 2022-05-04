@@ -1,5 +1,5 @@
 Footer{
-  background: #1F425D;
+  background: #232331;
   color: antiquewhite;
   font-size: 1.3rem;
 }
@@ -8,4 +8,7 @@ footer h5:hover{
   background: transparent;
   color: #cad7e8bf;
   padding-left: 15px;
+}
+.fb:hover{
+  color: #3b5998;
 }
