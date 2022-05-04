@@ -37,7 +37,7 @@ function App() {
         <Route path='/manage_inventory' element={<ManageInventory />}></Route>
         <Route path='/my_items' element={<MyItems />}></Route>
         <Route path='/add_items' element={<AddItems />}></Route>
-        <Route path='/single_items' element={<SingleItems />}></Route>
+        <Route path='/single_items/:id' element={<SingleItems />}></Route>
         <Route path='/blogs' element={<Blogs />}></Route>
         <Route path='/about_me' element={<AboutMe />}></Route>
         <Route path='/login' element={<LogIn />}></Route>

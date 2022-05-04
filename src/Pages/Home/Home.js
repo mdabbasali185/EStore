@@ -69,6 +69,7 @@ const Home = () => {
                     <Row xs={1} md={2} lg={3} className="g-4 mt-3 mb-5 align-items-stretch">
                         {inventory.map(item => <LoadItems key={item._id} product={item} />)}
                     </Row>
+                    
                 </div>
             </div>
 

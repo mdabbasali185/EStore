@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Col, Row } from 'react-bootstrap';
-import './AddItems.css';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init';
 import { toast } from 'react-toastify';
+import { Col, Row } from 'react-bootstrap';
+import './AddItems.css';
 
 const AddItems = () => {
     const [user] = useAuthState(auth)
@@ -21,15 +21,14 @@ const AddItems = () => {
     const handleAddItem = (e) => {
         e.preventDefault()
 
-// condition
+        // condition
 
 
 
 
         axios.post('/inventories', data)
             .then(res => {
-                toast("post success");
-                console.log(res.data)
+                toast.info("post success", { theme: 'colored' });
             })
 
 

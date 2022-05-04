@@ -1,0 +1,44 @@
+.animated-img {
+  height: 300px;
+  width: 100%;
+}
+.card-color{
+    background-color: #C8DCC8;
+}
+.card {
+  transition: 0.5s;
+  cursor: pointer;
+}
+.card-title {
+  font-size: 15px;
+  transition: 1s;
+  cursor: pointer;
+}
+
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+
+.card::before,
+.card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale3d(0, 0, 1);
+  transition: transform 0.3s ease-out 0s;
+  background: rgba(255, 255, 255, 0.1);
+  content: "";
+  pointer-events: none;
+}
+
+.card:hover::before,
+.card:hover::after,
+.card:focus::before,
+.card:focus::after {
+  transform: scale3d(1, 1, 1);
+}

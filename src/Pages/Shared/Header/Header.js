@@ -10,6 +10,7 @@ const Header = () => {
     const logOutHandler = event => {
         event.preventDefault()
         signOut(auth)
+        localStorage.removeItem('token')
     }
     return (
         <div>

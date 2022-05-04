@@ -17,40 +17,57 @@ const LogIn = () => {
   const [signInWithGoogle, googleUser, loading2, googleError] = useSignInWithGoogle(auth);
   const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
 
-  // login
-  const handleLogin = (e) => {
-    e.preventDefault();
-    signInWithEmail(email, password);
-    axios.post('login', { email })
-      .then(res => console.log(res.data))
-  };
 
 
-  const forgetPassword = () => {
-    sendPasswordResetEmail(email);
-    notify("send email");
-  };
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  const notify = (errorToast) => toast(errorToast);
-  if (user || googleUser) {
-    navigate(from);
-  }
 
+  const forgetPassword = () => {
+    sendPasswordResetEmail(email);
+    toast.info("send email", { theme: 'colored' });
+  };
 
   useEffect(() => {
     if (googleError) {
       const err = googleError.message
-      notify(err.slice(22, err.length - 2));
+      toast.warning(err.slice(22, err.length - 2), { theme: 'colored' });
     }
   }, [googleError]);
+
+  useEffect(() => {
+    if (googleUser) {
+      const { email } = googleUser.user
+      axios.post('/jwt-generator', { email })
+        .then(res => {
+          localStorage.setItem('token', res.data)
+          navigate(from);
+        })
+    }
+  }, [googleUser]);
+
+
   useEffect(() => {
     if (hookError) {
       const err = hookError.message
-      notify(err.slice(22, err.length - 2));
+      toast.error(err.slice(22, err.length - 2), { theme: 'colored' });
     }
   }, [hookError]);
+
+
+
+  // login
+  const handleLogin = (e) => {
+    e.preventDefault();
+    signInWithEmail(email, password);
+    console.log(email);
+    axios.post('/jwt-generator', { email })
+      .then(res => {
+        localStorage.setItem('token', res.data)
+        navigate(from);
+      })
+
+  };
 
   return (
     <div className="addNew ">

@@ -10,7 +10,7 @@ const SignUp = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    const notify = (errorToast) => toast(errorToast);
+    
 
     const [createUserWithEmailAndPassword, user, loading, hookError] =
         useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
@@ -18,7 +18,7 @@ const SignUp = () => {
     const handleLogin = (e) => {
         e.preventDefault();
         if (password !== confirmPassword) {
-            notify("password does not match");
+            toast.error("password does not match",{theme:'colored'});
             return;
         }
         createUserWithEmailAndPassword(email, password);
@@ -28,7 +28,7 @@ const SignUp = () => {
         if (hookError) {
 
             const err = hookError.message
-            notify(err.slice(22, err.length - 2));
+            toast.error(err.slice(22, err.length - 2),{theme:'colored'});
         }
     }, [hookError]);
     const navigate = useNavigate();
