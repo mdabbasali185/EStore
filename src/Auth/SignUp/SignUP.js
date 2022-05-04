@@ -51,9 +51,9 @@ const SignUp = () => {
                     <div className="text-center">
                     <div className="login-title my-1 text-secondary fw-bold fs-1 bg-dark  p-2 d-inline-block ">SignUp</div>
                     </div>
-                    <form className="login-form mx-auto w-50 addForm p-4 mt-5" onSubmit={handleLogin}>
+                    <form className="login-form mx-auto w-50 addForm p-4 mt-2" onSubmit={handleLogin}>
                         <input
-                            className="w-50"
+                            className="w-100"
                             type="text"
                             placeholder="Your Email"
                             onChange={(e) => setEmail(e.target.value)}
@@ -62,7 +62,7 @@ const SignUp = () => {
 
                         <div className="relative">
                             <input
-                                className="w-50 mt-3"
+                                className="w-100 mt-3"
                                 type="password"
                                 placeholder="password"
                                 onChange={(e) => setPassword(e.target.value)}
@@ -70,7 +70,7 @@ const SignUp = () => {
                             />
                         </div>
                         <input
-                            className="w-50 mt-3"
+                            className="w-100 mt-3"
                             type="password"
                             placeholder="confirm password"
                             onChange={(e) => setConfirmPassword(e.target.value)}

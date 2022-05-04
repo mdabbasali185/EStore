@@ -15,7 +15,8 @@ const Header = () => {
         <div>
             <Navbar className="header py-0" variant="dark" expand="lg">
                 <Container>
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand>
+                        <h1 className='word'><span className='text-light fst-italic'>E</span>STORE</h1>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
