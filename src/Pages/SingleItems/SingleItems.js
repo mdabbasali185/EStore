@@ -5,12 +5,41 @@ import { useParams } from 'react-router-dom';
 const SingleItems = () => {
     const { id } = useParams()
     const [item, setItem] = useState({})
+    const [loading, setLoading] = useState(true)
+
     const { description, supplier, name, quantity, image, price } = item;
 
     useEffect(() => {
         axios.get(`/inventory/${id}`)
-            .then(res => setItem(res.data))
-    }, [id])
+            .then(res => {
+                setItem(res.data)
+                setLoading(false)
+            })
+    }, [id, loading])
+
+
+    // update quantity -1
+    const updateHandler = () => {
+        if (quantity > 0) {
+            const updatedQuantity = parseInt(quantity) - 1
+            console.log(updatedQuantity);
+
+
+            axios.put(`http://localhost:5000/inventory/${id}`, { updatedQuantity })
+                .then(res => setLoading(true))
+        } else {
+            alert('you have not any item to delivered ')
+        }
+    }
+
+
+    if (loading) {
+        return <p> loading... </p>
+    }
+
+
+
+
     return (
         <div className='container py-5'>
             <div className="card mb-3 w-75 mx-auto">
@@ -25,6 +54,9 @@ const SingleItems = () => {
                             <p className="card-text fs-4 text-secondary"><strong>Supplier:</strong> {supplier}</p>
                             <p className="card-text fs-4 text-secondary"><strong>Quantity:</strong> {quantity}</p>
                             <p className="card-text fs-4 text-info fw-bold"><strong className='text-secondary'>Price:</strong> {price}</p>
+
+
+                            <button className="btn btn-primary" onClick={updateHandler} > delivered </button>
 
                         </div>
                     </div>

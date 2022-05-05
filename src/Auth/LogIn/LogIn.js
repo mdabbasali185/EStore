@@ -54,18 +54,22 @@ const LogIn = () => {
     }
   }, [hookError]);
 
+  useEffect(() => {
+    if (user) {
+      axios.post('/jwt-generator', { email })
+        .then(res => {
+          localStorage.setItem('token', res.data)
+          navigate(from);
+        })
+    }
+  }, [user, email])
+
 
 
   // login
   const handleLogin = (e) => {
     e.preventDefault();
     signInWithEmail(email, password);
-    console.log(email);
-    axios.post('/jwt-generator', { email })
-      .then(res => {
-        localStorage.setItem('token', res.data)
-        navigate(from);
-      })
 
   };
 

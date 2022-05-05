@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import tarzen from '../../Images/laptop1.jpg'
 import { Carousel, Row } from 'react-bootstrap';
-import useCard from '../Card/Card';
 
 import './Home.css';
 import LoadItems from '../LoadItems/LoadItems';
@@ -13,7 +12,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        axios.get('/inventories')
+        axios.get('/inventories?limit=6')
             .then(res => setInventory(res.data))
     }, [])
 
@@ -69,11 +68,8 @@ const Home = () => {
                     <Row xs={1} md={2} lg={3} className="g-4 mt-3 mb-5 align-items-stretch">
                         {inventory.map(item => <LoadItems key={item._id} product={item} />)}
                     </Row>
-                    
                 </div>
             </div>
-
-
         </div >
     );
 };
