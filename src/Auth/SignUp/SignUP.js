@@ -4,13 +4,15 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../Firebase/firebase.init";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 const SignUp = () => {
     // state set 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    
+
 
     const [createUserWithEmailAndPassword, user, loading, hookError] =
         useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
@@ -18,7 +20,7 @@ const SignUp = () => {
     const handleLogin = (e) => {
         e.preventDefault();
         if (password !== confirmPassword) {
-            toast.error("password does not match",{theme:'colored'});
+            toast.error("password does not match", { theme: 'colored' });
             return;
         }
         createUserWithEmailAndPassword(email, password);
@@ -28,7 +30,7 @@ const SignUp = () => {
         if (hookError) {
 
             const err = hookError.message
-            toast.error(err.slice(22, err.length - 2),{theme:'colored'});
+            toast.error(err.slice(22, err.length - 2), { theme: 'colored' });
         }
     }, [hookError]);
     const navigate = useNavigate();
@@ -42,14 +44,14 @@ const SignUp = () => {
     }, [user]);
 
     if (loading) {
-        return <p>Loading...</p>;
+        return <div className='text-center d-flex align-items-center text-danger justify-content-center' style={{ height: '100vh' }}> <FontAwesomeIcon icon={faSpinner} className='fa-pulse fa-10x'></FontAwesomeIcon> </div>;
     }
     return (
         <div className="addNew ">
             <div className="login-container my-5">
                 <div className="container">
                     <div className="text-center">
-                    <div className="login-title my-1 text-secondary fw-bold fs-1 bg-dark  p-2 d-inline-block ">SignUp</div>
+                        <div className="login-title my-1 text-secondary fw-bold fs-1 bg-dark  p-2 d-inline-block ">SignUp</div>
                     </div>
                     <form className="login-form mx-auto w-50 addForm p-4 mt-2" onSubmit={handleLogin}>
                         <input

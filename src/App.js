@@ -16,9 +16,11 @@ import Footer from './Pages/Shared/Footer/Footer';
 import SignUp from './Auth/SignUp/SignUP';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
-import './App.css';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './Firebase/firebase.init';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+import './App.css';
 
 function App() {
 
@@ -26,7 +28,7 @@ function App() {
   const [user, loading, error] = useAuthState(auth);
 
   if (loading) {
-    return <p> loading... </p>
+    return <div className='text-center d-flex align-items-center text-danger justify-content-center' style={{ height: '100vh' }}> <FontAwesomeIcon icon={faSpinner} className='fa-pulse fa-10x'></FontAwesomeIcon> </div>
   }
   return (
     <div className="App">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import { faTrashCan, faSpinner} from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios';
 
 const ManageInventory = () => {
@@ -24,11 +24,12 @@ const ManageInventory = () => {
 
 
     if (loading) {
-        return <p> loading... </p>
+        return <div className='text-center d-flex align-items-center text-danger justify-content-center' style={{height:'100vh'}}> <FontAwesomeIcon icon={faSpinner} className='fa-pulse fa-10x'></FontAwesomeIcon> </div>
       }
 
     return (
         <div>
+            
             <div className='container'>
                 <Table striped bordered hover className='text-center fw-bold'>
                     <thead>

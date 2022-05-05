@@ -1,6 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { toast } from "react-toastify";
 import { useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 const SingleItems = () => {
     const { id } = useParams()
@@ -28,13 +31,15 @@ const SingleItems = () => {
             axios.put(`http://localhost:5000/inventory/${id}`, { updatedQuantity })
                 .then(res => setLoading(true))
         } else {
-            alert('you have not any item to delivered ')
+
+            toast.info("you have not any item to delivered ", { theme: 'colored' });
+
         }
     }
 
 
     if (loading) {
-        return <p> loading... </p>
+        return <div className='text-center d-flex align-items-center text-danger justify-content-center' style={{ height: '100vh' }}> <FontAwesomeIcon icon={faSpinner} className='fa-pulse fa-10x'></FontAwesomeIcon> </div>
     }
 
 
