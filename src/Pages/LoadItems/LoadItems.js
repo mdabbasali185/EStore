@@ -16,7 +16,7 @@ const LoadItems = ({ product }) => {
                     </Card.Text>
                     <p className='text-info fs-5 fw-bold'><strong className='text-secondary'>price:</strong> {price}</p>
                     <p className='fs-5 text-secondary'><strong>supplier:</strong> {supplier}</p>
-                    <p className="fw-bold">Quantity:{quantity}</p>
+                    <p className="fw-bold">Quantity:{quantity < 0 ? quantity : "SoldOut"}</p>
                     <Link to={`/single_items/${_id}`} className='animated-button'><span>Manage Inventories</span></Link>
 
                 </Card.Body>

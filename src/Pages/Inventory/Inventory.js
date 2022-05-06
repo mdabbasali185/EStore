@@ -10,11 +10,13 @@ const Inventory = () => {
             .then(res => setCard(res.data))
     }, [])
     return (
-        <div className="container">
-            <div className="card-compo">
-                <Row xs={1} md={2} lg={3} className="g-4 my-5">
-                    {card.map(item => <LoadItems key={item._id} product={item} />)}
-                </Row>
+        <div className="card-compo">
+            <div className="container">
+                <div>
+                    <Row xs={1} md={2} lg={3} className="g-5 my-5">
+                        {card.map(item => <LoadItems key={item._id} product={item} />)}
+                    </Row>
+                </div>
             </div>
         </div>
     );

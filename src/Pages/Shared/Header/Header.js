@@ -53,16 +53,6 @@ const Header = () => {
                                     Blogs
                                 </NavLink>
                             </Nav>
-                            <Nav>
-                                <NavLink
-                                    className={({ isActive }) =>
-                                        isActive ? "link-active link" : "link"
-                                    }
-                                    to="/about_me"
-                                >
-                                    AboutMe
-                                </NavLink>
-                            </Nav>
                             {user ? (
                                 <>
 
