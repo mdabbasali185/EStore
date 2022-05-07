@@ -15,21 +15,29 @@ const AddItems = () => {
     const [supplier, setSupplier] = useState('')
     const [description, setDescription] = useState('')
 
-    const data = { name, price, quantity, image, supplier, description, email: user?.email }
-
 
     const handleAddItem = (e) => {
         e.preventDefault()
+        const email = user?.email
+        const data = { name, price, quantity, image, supplier, description, email }
 
-        // condition
-
-
-
-
-        axios.post('/inventories', data)
-            .then(res => {
-                toast.info("post success", { theme: 'colored' });
-            })
+        if (!name || !price || !quantity || !image || !supplier || !description || !email) {
+            toast.warning("please fill up all the blocks")
+        } else if (parseInt(quantity) <= 0 || parseInt(price) <= 0) {
+            toast.error("price & quantity must be greater than zero.")
+        }
+        else {
+            axios.post('/inventories', data)
+                .then(res => {
+                    toast.info("post success", { theme: 'colored' });
+                })
+        }
+        setName('')
+        setPrice('')
+        setQuantity('')
+        setImage('')
+        setSupplier('')
+        setDescription('')
 
 
     }

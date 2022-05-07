@@ -5,25 +5,25 @@
 .card-color{
     background-color: #C8DCC8;
 }
-.card {
+.loadItems .card {
   transition: 0.5s;
   cursor: pointer;
 }
-.card-title {
+.loadItems .card-title {
   font-size: 15px;
   transition: 1s;
   cursor: pointer;
 }
 
 
-.card:hover {
+.loadItems .card:hover {
   transform: scale(1.05);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 
-.card::before,
-.card::after {
+.loadItems .card::before,
+.loadItems .card::after {
   position: absolute;
   top: 0;
   right: 0;
@@ -36,9 +36,9 @@
   pointer-events: none;
 }
 
-.card:hover::before,
-.card:hover::after,
-.card:focus::before,
-.card:focus::after {
+.loadItems .card:hover::before,
+.loadItems .card:hover::after,
+.loadItems .card:focus::before,
+.loadItems .card:focus::after {
   transform: scale3d(1, 1, 1);
 }

@@ -21,6 +21,7 @@ import RequireAuth from "./Auth/RequireAuth/RequireAuth"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import './App.css';
+import NotFound from './Pages/Shared/NotFound/NotFound';
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
         <Route path='/blogs' element={<Blogs />}></Route>
         <Route path='/login' element={<LogIn />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       <ToastContainer></ToastContainer>

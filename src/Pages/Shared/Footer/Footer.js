@@ -1,8 +1,8 @@
+import { faFacebook, faGithub, faGoogle, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faGithub, faGoogle, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { Col, Row } from 'react-bootstrap';
-import './Footer.css'
+import './Footer.css';
 
 const Footer = () => {
   return (
@@ -12,6 +12,9 @@ const Footer = () => {
           <Col lg={4}>
             <div className="px-3 border-light border-end h-100">
               <h1 className='word'><span className='text-light fst-italic'>E</span>STORE</h1>
+              <p className='text-secondary py-2'>Our products are most amazing products. We are provide our honourable customers.In this warehouse we have most authentic laptop products export in the
+                worldwide. We can provide the showrooms our products by any
+                times. </p>
             </div>
           </Col>
           <Col lg={4}>
