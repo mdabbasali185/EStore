@@ -30,7 +30,7 @@ const SingleItems = () => {
     const updateHandler = () => {
         if (quantity > 0) {
             const updatedQuantity = parseInt(quantity) - 1
-            axios.put(`http://localhost:5000/inventory/${id}`, { updatedQuantity })
+            axios.put(`/inventory/${id}`, { updatedQuantity })
                 .then(res => setLoading(true))
         } else {
 

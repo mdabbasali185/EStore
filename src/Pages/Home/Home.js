@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Card, Carousel, Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import laptop1 from '../../Images/laptop1 (2).jpg';
 import laptop2 from '../../Images/laptop2.jpg';
 import laptop3 from '../../Images/laptop3.jpg';
+import laotopWorld from '../../Images/laotopWorld.jpg';
 import LoadItems from '../LoadItems/LoadItems';
 import './Home.css';
 
@@ -88,21 +88,28 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            
-            <div>
 
+            <div className='py-5'>
+                <div className='container text-info bg-dark py-2 rounded text-center'>
+                    <h1>This products is the trending Product to Sell in 2022.</h1>
+                </div>
+                <div className="banner">
+                    <h1 className="custom-style ">THE BRANDS YOU KNOW & </h1>
+                    <h1 className="custom-style "> NEW PRODUCTS YOU’LL LOVE</h1>
+                </div>
             </div>
 
 
             {/* recent section */}
-            <div>
-                {
-                    recent.map(item => (
+            <div className='bg-secondary py-5'>
+                <h1 className='container text-info bg-dark py-2 rounded text-center'>Recent Products </h1>
+                <Row xs={1} md={2} lg={3} className="g-4 container mx-auto">
+                    {
+                        recent.map(item => (
 
 
-                        <Row key={item._id} xs={1} md={2} lg={3} className="g-4">
 
-                            <Col className='container py-5'>
+                            <Col key={item._id} className='container py-5'>
                                 <Card className='h-100 '>
 
                                     <Card.Img variant="top" className='animated-img' src={item.image} />
@@ -119,12 +126,12 @@ const Home = () => {
                                     </Card.Body>
                                 </Card>
                             </Col>
-                        </Row>
 
 
 
-                    ))
-                }
+                        ))
+                    }
+                </Row>
 
             </div>
         </div >
