@@ -1,6 +1,6 @@
 # Getting Started with my new project EStore
 
-This project was  [EStore](https://wearhouse-e465d.web.app/).
+This project was [EStore](https://wearhouse-e465d.web.app/).
 
 # EStore
 
